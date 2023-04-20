@@ -52,8 +52,12 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-
-};
+  //this function loops (with a for loop) through an newArray and raises the indexes to the second power. It then pushes the new values into and returns the new array with new values};
+    let newArray = [];
+    for (let i = 0; i < arr.length; i++) {
+      newArray.push(Math.pow(2, arr[i]));
+    } return newArray;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -62,7 +66,10 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-
+  let newArray = [];
+  arr.forEach(element => {
+    newArray.push(Math.pow(2, element));
+  }); return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,6 +79,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
+  return arr.map(element => Math.pow(2,element));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,6 +93,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
+  return arr.map(element => element.charCodeAt());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +107,19 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-
+  let evenOddArray = arr.map(element =>{
+    console.log(element)
+    if(element % 2 === 0){
+      return 'even';
+    }
+    else if(element % 2 === 1){
+      return'odd';
+    }
+    else if(isNaN(element)){
+      return 'N/A';
+    }
+  });
+  return evenOddArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
