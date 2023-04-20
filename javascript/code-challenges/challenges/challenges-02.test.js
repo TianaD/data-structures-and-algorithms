@@ -27,6 +27,8 @@ CHALLENGE 2
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
+  // did everything on one line, created variable addOne and set it to an array with a method 'map' that iterates through array and increments the number in each index of the array by one
+  const addOne = (arr) => arr.map(number => number + 1);
 
 
 /* ------------------------------------------------------------------------------------------------
