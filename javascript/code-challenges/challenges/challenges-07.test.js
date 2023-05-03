@@ -131,10 +131,20 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
-  return result;
-};
 
+  recipe.ingredients.forEach((ingredient) => {
+
+    let words = ingredient.split(" ");
+
+    let name = words.slice(2).join(" ");
+
+    result.push(name);
+
+  });
+
+  return result;
+
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
