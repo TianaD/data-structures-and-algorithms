@@ -85,12 +85,16 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
+// const isNum = (input) => {
+//   if(input = 12345){
+//     return true;
+//   }if(input != 12345){
+//     return false;
+//   }
+// };
+
 const isNum = (input) => {
-  if(input = 12345){
-    return true;
-  }if(input != 12345){
-    return false;
-  }
+  return /\d/g.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
