@@ -9,10 +9,9 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  let max = arr.reduce(function (a, b) {
-    return Math.max(a, b);
-  });
-  return max;
+  return arr.reduce((acc, current)=> {
+    return acc < current ? current : acc;
+  }, Math.min(...arr));
 };
 
 /* ------------------------------------------------------------------------------------------------
