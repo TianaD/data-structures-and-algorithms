@@ -9,9 +9,9 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  let max = arr.reduce(function(a, b) {
+  let max = arr.reduce(function (a, b) {
     return Math.max(a, b);
-});
+  });
   return max;
 };
 
@@ -22,7 +22,8 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
@@ -40,8 +41,8 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  for(let val of Object.values(obj)) {
-    if(value === val) return true;
+  for (let val of Object.values(obj)) {
+    if (value === val) return true;
   }
   return false;
 };
@@ -143,8 +144,16 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  for (let i = 0; i < arr.length; i++) {
+    let checker = checkValues(arr[i], character);
+    if (checker === true) {
+      if (Object.values(arr[i]).includes(arr[i].children)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
