@@ -8,6 +8,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
+challenge10-TwoDimensionalArrays
   const chars = str.split('');
   const TenCharc = chars.splice(-10)
   return TenCharc
@@ -28,6 +29,7 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
+challenge10-TwoDimensionalArrays
   for (let i = 0; i < matrix.length; i++) {
 
     for (let j = 0; j < matrix[i].length; j++) {
@@ -36,6 +38,7 @@ const findMax = (matrix) => {
       }
     }
   }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,6 +56,7 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
+challenge10-TwoDimensionalArrays
   let total = 0;
   for (let i = 0; i < matrix.length; i++){
     for (let x = 0; x < matrix[i].length; x++){
@@ -61,6 +65,8 @@ const totalSum = (matrix) => {
     }
   }
   return total};
+};
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,6 +92,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
+challenge10-TwoDimensionalArrays
   let totalsPerHour = [];
   for (let hour = 0; hour < hoursOpen.length; hour++) {
     let hourlytotal = 0;
@@ -108,6 +115,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
+challenge10-TwoDimensionalArrays
   let newArray = [];
   hours.forEach((hour, index) => {
     let obj = {
@@ -141,6 +149,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
+challenge10-TwoDimensionalArrays
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].store === 'Pet store') {
       for (let j = 0; j < arr[i].items.length; j++) {
