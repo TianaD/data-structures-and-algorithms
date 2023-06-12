@@ -7,16 +7,16 @@ Write a function named longestString that takes in an array of strings and retur
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-  if (!Array.isArray(arr)) {
-    return ' array.';
-  }
-  return arr.reduce((longestIndex, currentString, currentIndex) => {
-    if (currentString.length > arr[longestIndex].length) {
-      return currentIndex;
-    } else {
-      return longestIndex;
+
+  let maxLength = 0;
+  let longestIndex = -1;
+  arr.forEach((element, index) => {
+    if (element.length > maxLength) {
+      maxLength = element.length;
+      longestIndex = index;
     }
-  }, 0);
+  });
+  return longestIndex;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,8 +28,12 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  const regex = /^\d{4}$/;
-  return regex.test(pin);};
+  let newArr = [];
+  arr.forEach((element) =>{
+    newArr.push(element.substr(0,1))
+  })
+  return newArr
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -82,7 +86,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every((str) => str.includes(":)"));
 };
 
 /* ------------------------------------------------------------------------------------------------
