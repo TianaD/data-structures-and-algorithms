@@ -137,9 +137,9 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   arr.sort((a, b) => {
-    if(a[property] < b[property]){
+    if (a[property] < b[property]) {
       return -1;
-    } else if (a[property] > b[property]){
+    } else if (a[property] > b[property]) {
       return 1;
     } else {
       return 0;
@@ -161,9 +161,9 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  if (url.includes('https://')){
+  if (url.includes('https://')) {
     return true
-  }else{
+  } else {
     return false
   }
 };
@@ -188,7 +188,32 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+
+  const helpCheck = (row1, col1, row2, col2, row3, col3) => {
+    if (board[row1][col1] === board[row2][col2] && board[row2][col2] === board[row3][col3] && board[row1][col1] !== '') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  // check diagonals
+  if (helpCheck(0, 0, 1, 1, 2, 2)) {
+    return true;
+  } else if (helpCheck(0, 2, 1, 1, 2, 0)) {
+    return true;
+  }
+
+  // check rows and columns
+  for (let i = 0; i < 3; i++) {
+    if (helpCheck(i, 0, i, 1, i, 2)) {
+      return true;
+    } else if (helpCheck(0, i, 1, i, 2, i)) {
+      return true;
+    }
+    // no win detected
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
