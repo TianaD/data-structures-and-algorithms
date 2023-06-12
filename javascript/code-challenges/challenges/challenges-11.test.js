@@ -18,8 +18,8 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
-  return Object.entries(obj).map(([key,value]) => `<li>${key}: ${value}</li>`)
+function transformToLis(obj) {
+  return Object.entries(obj).map(([key, value]) => `<li>${key}: ${value}</li>`)
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,7 +43,8 @@ const count = (target, input) => {
       }
     }
   }
-  return counter;};
+  return counter;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -56,13 +57,14 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-    let total = 0
-  for (let x = 0; x< input.length; x++){
-    for(let i = 0; i < input[x].length; i++){
+  let total = 0
+  for (let x = 0; x < input.length; x++) {
+    for (let i = 0; i < input[x].length; i++) {
       total += input[x][i]
     }
   }
-  return total};
+  return total
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -154,7 +156,7 @@ let findMaleAndFemale = (data) => {
       acc.push(value.name);
     }
     return acc;
-    }, []).join(' and ')
+  }, []).join(' and ')
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,15 +166,16 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
- let results = data.reduce((minHeight, character) => {
+  let results = data.reduce((minHeight, character) => {
     if (parseInt(minHeight.height) < parseInt(character.height)) {
-        return minHeight;
+      return minHeight;
     } else {
 
-        return character;
+      return character;
     }
   });
-  return results.name};
+  return results.name
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -187,8 +190,8 @@ Run your tests from the console: jest challenges-10.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return a list of key value pairs inside of li tags', () => {
-    expect(transformToLis({name: 'bob', age: 32})[0]).toStrictEqual(`<li>name: bob</li>`);
-    expect(transformToLis({name: 'bob', age: 32})[1]).toStrictEqual(`<li>age: 32</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[0]).toStrictEqual(`<li>name: bob</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[1]).toStrictEqual(`<li>age: 32</li>`);
     expect(transformToLis({})).toStrictEqual([]);
   });
 });

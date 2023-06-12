@@ -7,11 +7,8 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
-challenge10-TwoDimensionalArrays
-  const chars = str.split('');
-  const TenCharc = chars.splice(-10)
-  return TenCharc
+function returnTen(str) {
+  return str.split('').splice(-10)
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,7 +26,7 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-challenge10-TwoDimensionalArrays
+
   for (let i = 0; i < matrix.length; i++) {
 
     for (let j = 0; j < matrix[i].length; j++) {
@@ -56,15 +53,15 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-challenge10-TwoDimensionalArrays
+
   let total = 0;
-  for (let i = 0; i < matrix.length; i++){
-    for (let x = 0; x < matrix[i].length; x++){
+  for (let i = 0; i < matrix.length; i++) {
+    for (let x = 0; x < matrix[i].length; x++) {
       let current = matrix[i][x]
       total += current
     }
   }
-  return total};
+  return total
 };
 
 
@@ -92,7 +89,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-challenge10-TwoDimensionalArrays
+
   let totalsPerHour = [];
   for (let hour = 0; hour < hoursOpen.length; hour++) {
     let hourlytotal = 0;
@@ -115,7 +112,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-challenge10-TwoDimensionalArrays
+
   let newArray = [];
   hours.forEach((hour, index) => {
     let obj = {
@@ -149,7 +146,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-challenge10-TwoDimensionalArrays
+
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].store === 'Pet store') {
       for (let j = 0; j < arr[i].items.length; j++) {
@@ -265,20 +262,20 @@ Run your tests from the console: jest challenge-12.test.js
 
 describe('Testing challenge 1', () => {
   test('it should return the last 10 characters of a string as an array', () => {
-    expect(returnTen('hello world')).toStrictEqual(['e','l','l','o',' ','w','o','r','l','d']);
-    expect(returnTen('world')).toStrictEqual(['w','o','r','l','d']);
+    expect(returnTen('hello world')).toStrictEqual(['e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']);
+    expect(returnTen('world')).toStrictEqual(['w', 'o', 'r', 'l', 'd']);
   });
 });
 
 describe('Testing challenge 2', () => {
   test('It should return the max value', () => {
-    expect(findMax([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(24);
+    expect(findMax([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(24);
   });
 });
 
 describe('Testing challenge 3', () => {
   test('It should return the total sum', () => {
-    expect(totalSum([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(81);
+    expect(totalSum([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(81);
     expect(totalSum([])).toStrictEqual(0);
   });
 });
